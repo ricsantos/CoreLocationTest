@@ -1,0 +1,6 @@
+framework module Pods_CoreLocationTest {
+  umbrella header "Pods-CoreLocationTest-umbrella.h"
+
+  export *
+  module * { export * }
+}
