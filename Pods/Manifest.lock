@@ -1,18 +1,14 @@
 PODS:
-  - PromiseKit/CoreLocation (6.2.5):
+  - PromiseKit/CoreLocation (6.2.6):
     - PromiseKit/CorePromise
-  - PromiseKit/CorePromise (6.2.5)
+  - PromiseKit/CorePromise (6.2.6)
 
 DEPENDENCIES:
   - PromiseKit/CoreLocation
 
-SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - PromiseKit
-
 SPEC CHECKSUMS:
-  PromiseKit: a26828b0a8d5874960dfdb575b57a70790ec36f1
+  PromiseKit: 8245cb2e3a8fe00453e580bd4aafb57e1671f501
 
-PODFILE CHECKSUM: 8689f1f624a8e16cac90a5e86d1d1cde87e4a090
+PODFILE CHECKSUM: 17f2676233e62d49b1d9d88654f57a35be323926
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.4.0

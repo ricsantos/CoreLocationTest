@@ -100,6 +100,7 @@
 				AD6556DB209D27BE00637121 /* Frameworks */,
 				AD6556DC209D27BE00637121 /* Resources */,
 				0DB587EB0B18B6015D3C692E /* [CP] Embed Pods Frameworks */,
+				083B17E9C0B3198AD499FDEC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -157,6 +158,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		083B17E9C0B3198AD499FDEC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoreLocationTest/Pods-CoreLocationTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		0DB587EB0B18B6015D3C692E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
