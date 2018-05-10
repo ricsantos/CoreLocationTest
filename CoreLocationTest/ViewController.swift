@@ -12,6 +12,7 @@ import CoreLocation
 class ViewController: UIViewController {
     
     let label = UILabel()
+    let currentStatusButton = UIButton()
     let whenInUseThenAlwaysButton = UIButton()
     let whenInUseButton = UIButton()
     let alwaysButton = UIButton()
@@ -25,6 +26,11 @@ class ViewController: UIViewController {
         self.label.layer.borderColor = UIColor.lightGray.cgColor
         self.label.layer.borderWidth = 1.0
         self.view.addSubview(self.label)
+        
+        self.currentStatusButton.setTitle("Current Status", for: .normal)
+        self.currentStatusButton.addTarget(self, action: #selector(currentStatus), for: .touchUpInside)
+        self.currentStatusButton.backgroundColor = UIColor.lightGray
+        self.view.addSubview(self.currentStatusButton)
         
         self.whenInUseThenAlwaysButton.setTitle("When In Use then Always", for: .normal)
         self.whenInUseThenAlwaysButton.addTarget(self, action: #selector(whenInUseThenAlways), for: .touchUpInside)
@@ -53,6 +59,9 @@ class ViewController: UIViewController {
         self.label.frame = CGRect(x: padding, y: top, width: itemWidth, height: itemHeight)
         top += itemHeight + padding
         
+        self.currentStatusButton.frame = CGRect(x: padding, y: top, width: itemWidth, height: itemHeight)
+        top += itemHeight + padding
+        
         self.whenInUseThenAlwaysButton.frame = CGRect(x: padding, y: top, width: itemWidth, height: itemHeight)
         top += itemHeight + padding
         
@@ -61,6 +70,10 @@ class ViewController: UIViewController {
         
         self.alwaysButton.frame = CGRect(x: padding, y: top, width: itemWidth, height: itemHeight)
         top += itemHeight + padding
+    }
+    
+    @objc func currentStatus() {
+        self.label.text = "Status: \(CLLocationManager.string(for: CLLocationManager.authorizationStatus()))"
     }
     
     @objc func whenInUseThenAlways() {
