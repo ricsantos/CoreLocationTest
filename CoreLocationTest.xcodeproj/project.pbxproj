@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C95A37D20A3F16F00C6E862 /* LocationFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C95A37C20A3F16F00C6E862 /* LocationFlowController.swift */; };
 		AD6556E2209D27BE00637121 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6556E1209D27BE00637121 /* AppDelegate.swift */; };
 		AD6556E4209D27BE00637121 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6556E3209D27BE00637121 /* ViewController.swift */; };
 		AD6556E7209D27BE00637121 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD6556E5209D27BE00637121 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		5F74D22F4759CF47058670CE /* Pods_CoreLocationTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoreLocationTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C95A37C20A3F16F00C6E862 /* LocationFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationFlowController.swift; sourceTree = "<group>"; };
 		89E4A0E96154A0ED5EC395CF /* Pods-CoreLocationTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoreLocationTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoreLocationTest/Pods-CoreLocationTest.debug.xcconfig"; sourceTree = "<group>"; };
 		AD6556DE209D27BE00637121 /* CoreLocationTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreLocationTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD6556E1209D27BE00637121 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			children = (
 				AD6556E1209D27BE00637121 /* AppDelegate.swift */,
 				AD6556E3209D27BE00637121 /* ViewController.swift */,
+				7C95A37C20A3F16F00C6E862 /* LocationFlowController.swift */,
 				AD6556E5209D27BE00637121 /* Main.storyboard */,
 				AD6556E8209D27BE00637121 /* Assets.xcassets */,
 				AD6556EA209D27BE00637121 /* LaunchScreen.storyboard */,
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD6556E4209D27BE00637121 /* ViewController.swift in Sources */,
+				7C95A37D20A3F16F00C6E862 /* LocationFlowController.swift in Sources */,
 				AD6556E2209D27BE00637121 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

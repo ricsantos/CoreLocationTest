@@ -1,3 +1,3 @@
 # CoreLocationTest
 
-Sample project to demonstrate an [issue](https://github.com/PromiseKit/CoreLocation/issues/16) found in [PromiseKit/CoreLocation](https://github.com/PromiseKit/CoreLocation).
+Sample project to demonstrate an issue found where no feedback is given after a use selects 'Only While Using the App' on the escalated authorization alert.

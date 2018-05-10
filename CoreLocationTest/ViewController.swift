@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     let whenInUseButton = UIButton()
     let alwaysButton = UIButton()
     
+    let locationFlowController = LocationFlowController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,30 +65,25 @@ class ViewController: UIViewController {
     
     @objc func whenInUseThenAlways() {
         self.label.text = "Requesting When In Use then Always..."
-        _ = firstly {
-            CLLocationManager.requestAuthorization(type: .whenInUse)
-        }.then { _ in
-            CLLocationManager.requestAuthorization(type: .always)
-        }.done { _ in
-            self.label.text = "Done"
+        self.locationFlowController.requestAuthorization(type: .whenInUse) { (status) in
+            self.label.text = "Status: \(CLLocationManager.string(for: status))"
+            self.locationFlowController.requestAuthorization(type: .always, completion: { (status) in
+                self.label.text = "Status: \(CLLocationManager.string(for: status))"
+            })
         }
     }
     
     @objc func whenInUse() {
         self.label.text = "Requesting When In Use..."
-        _ = firstly {
-            CLLocationManager.requestAuthorization(type: .whenInUse)
-        }.done { location in
-            self.label.text = "Done"
+        self.locationFlowController.requestAuthorization(type: .whenInUse) { (status) in
+            self.label.text = "Status: \(CLLocationManager.string(for: status))"
         }
     }
     
     @objc func always() {
         self.label.text = "Requesting Always..."
-        _ = firstly {
-            CLLocationManager.requestAuthorization(type: .always)
-        }.done { _ in
-            self.label.text = "Done"
+        self.locationFlowController.requestAuthorization(type: .always) { (status) in
+            self.label.text = "Status: \(CLLocationManager.string(for: status))"
         }
     }
 
