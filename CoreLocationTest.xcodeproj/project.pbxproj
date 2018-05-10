@@ -102,8 +102,6 @@
 				AD6556DA209D27BE00637121 /* Sources */,
 				AD6556DB209D27BE00637121 /* Frameworks */,
 				AD6556DC209D27BE00637121 /* Resources */,
-				0DB587EB0B18B6015D3C692E /* [CP] Embed Pods Frameworks */,
-				083B17E9C0B3198AD499FDEC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -161,39 +159,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		083B17E9C0B3198AD499FDEC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoreLocationTest/Pods-CoreLocationTest-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		0DB587EB0B18B6015D3C692E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CoreLocationTest/Pods-CoreLocationTest-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoreLocationTest/Pods-CoreLocationTest-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B89945DAEEF798D48CB7D02E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -370,10 +335,7 @@
 				DEVELOPMENT_TEAM = B89H5L73N6;
 				INFOPLIST_FILE = CoreLocationTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.ricsantos.CoreLocationTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -390,10 +352,7 @@
 				DEVELOPMENT_TEAM = B89H5L73N6;
 				INFOPLIST_FILE = CoreLocationTest/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.ricsantos.CoreLocationTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

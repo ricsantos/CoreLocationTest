@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import PromiseKit
+import CoreLocation
 
 class ViewController: UIViewController {
     

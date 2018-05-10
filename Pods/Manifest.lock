@@ -1,14 +1,3 @@
-PODS:
-  - PromiseKit/CoreLocation (6.2.6):
-    - PromiseKit/CorePromise
-  - PromiseKit/CorePromise (6.2.6)
+PODFILE CHECKSUM: 5f409672ec9ce3a006ef1e96a79365d6cb77e064
 
-DEPENDENCIES:
-  - PromiseKit/CoreLocation
-
-SPEC CHECKSUMS:
-  PromiseKit: 8245cb2e3a8fe00453e580bd4aafb57e1671f501
-
-PODFILE CHECKSUM: 17f2676233e62d49b1d9d88654f57a35be323926
-
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.2
