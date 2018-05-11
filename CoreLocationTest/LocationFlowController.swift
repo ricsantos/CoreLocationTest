@@ -20,20 +20,59 @@ class LocationFlowController: NSObject {
     
     private var manager = CLLocationManager()
     private var completion: AuthCompletion?
-    
+    private var haveRequestedAlways: Bool {
+        get {
+            return UserDefaults.standard.bool(forKey: "Location.haveRequestedAlways")
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: "Location.haveRequestedAlways")
+        }
+    }
+
     override init() {
         super.init()
         self.manager.delegate = self
+        
+        // Use this callback to check the current state, as when a system alert is presented to
+        // ask the user for authorization, the app transitions to inactive and back.
+        // This method is superior to the delegate as it will always be called.
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive), name: .UIApplicationDidBecomeActive, object: nil)
     }
     
     func requestAuthorization(type: RequestAuthorizationType, completion: @escaping AuthCompletion) {
-        guard self.completion == nil else { fatalError() }
-        self.completion = completion
+        let status: CLAuthorizationStatus = CLLocationManager.authorizationStatus()
         switch type {
         case .always:
-            self.manager.requestAlwaysAuthorization()
+            switch status {
+            case .notDetermined, .authorizedWhenInUse:
+                if self.haveRequestedAlways {
+                    completion(.authorizedWhenInUse)
+                } else {
+                    self.haveRequestedAlways = true
+                    self.completion = completion
+                    self.manager.requestAlwaysAuthorization()
+                }
+            default:
+                completion(status)
+            }
         case .whenInUse:
-            self.manager.requestWhenInUseAuthorization()
+            switch status {
+            case .notDetermined:
+                self.completion = completion
+                self.manager.requestWhenInUseAuthorization()
+            default:
+                completion(status)
+            }
+        }
+    }
+    
+    @objc func applicationDidBecomeActive() {
+        print("Application did become active")
+        let status = CLLocationManager.authorizationStatus()
+        print("Status: \(CLLocationManager.string(for: status))")
+        if let completion = completion {
+            self.completion = nil
+            completion(status)
         }
     }
     
@@ -43,10 +82,6 @@ extension LocationFlowController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         print("LFC: Did change auth, status '\(CLLocationManager.string(for: status))'")
-        if let completion = self.completion {
-            completion(status)
-            self.completion = nil
-        }
     }
 
 }
